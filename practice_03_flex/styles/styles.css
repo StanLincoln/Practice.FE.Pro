@@ -6,23 +6,29 @@
 
 .flexContainer {
     min-height: 400px;
+    width: 700px;
     border: 1px solid blue;
+    display: flex;
 }
 
 .box {
-    width: 300px;
+    /* width: 300px; */
     height: 300px;
     border: 1px solid black;
+    flex-basis: 300px;
 }
 
 .box1 {
     background-color: red;
+   flex-shrink: 0;
 }
 
 .box2 {
     background-color: yellow;
+    flex-shrink: 1;
 }
 
 .box3 {
     background-color: lightgreen;
+    flex-shrink: 0;
 }
