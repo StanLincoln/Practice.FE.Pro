@@ -1,81 +1,57 @@
 // Источник данных
 const products = [
-  {
-    name: "Ball",
-    category: "Sport",
-    img: "./assets/ball.jpeg",
-    price: 100,
-    description: "Just the simple ball",
-  },
-  {
-    name: "Gloves",
-    category: "Sport",
-    img: "./assets/gloves.jpg",
-    price: 140,
-    description: "Tactical gloves",
-  },
-  {
-    name: "Sport shoes",
-    category: "Sport",
-    discount: true,
-    img: "./assets/shoes.png",
-    price: 320,
-    description: "Sport shoes. The best choice for running",
-  },
-  {
-    name: "Hammer",
-    category: "Tools",
-    img: "./assets/hammer.jpeg",
-    price: 40,
-    description: "The best way to convince somebody that you are right.",
-  },
-  {
-    name: "Saw",
-    category: "Tools",
-    discount: true,
-    img: "./assets/saw.jpeg",
-    price: 75,
-    description:
-      "This will help you in case the hammer could not convince your companion",
-  },
-  {
-    name: "Shark toy",
-    category: "Other",
-    img: "./assets/shark.jpeg",
-    price: 45,
-    description: "From IKEA with love",
-  },
-  {
-    name: "Truck",
-    category: "Other",
-    img: "./assets/truck.jpeg",
-    price: 80,
-    description: "Truck. Nothing more.",
-  },
+    {
+        name: "Ball",
+        category: "Sport",
+        img: "./assets/ball.jpeg",
+        price: 100,
+        description: 'Just the simple ball'
+    },
+    {
+        name: "Gloves",
+        category: "Sport",
+        img: "./assets/gloves.jpg",
+        price: 140,
+        description: 'Tactical gloves'
+    },
+    {
+        name: "Sport shoes",
+        category: "Sport",
+        discount: true,
+        img: "./assets/shoes.png",
+        price: 320,
+        description: 'Sport shoes. The best choice for running'
+    },
+    {
+        name: "Hammer",
+        category: "Tools",
+        img: "./assets/hammer.jpeg",
+        price: 40,
+        description: 'The best way to convince somebody that you are right.'
+    },
+    {
+        name: "Saw",
+        category: "Tools",
+        discount: true,
+        img: "./assets/saw.jpeg",
+        price: 75,
+        description: 'This will help you in case the hammer could not convince your companion'
+    },
+    {
+        name: "Shark toy",
+        category: "Other",
+        img: "./assets/shark.jpeg",
+        price: 45,
+        description: 'From IKEA with love'
+    },
+    {
+        name: "Truck",
+        category: "Other",
+        img: "./assets/truck.jpeg",
+        price: 80,
+        description: 'Truck. Nothing more.'
+    }
 ];
-// Отфильтровать товары по категории Other
-
-// const newArr = products.filter(el => el.category ==='Other')
-// console.log(newArr);
-
-// Создать массив из имен товаров способом map и reduce
-
-// const newArr = products.map( el => el.name)
-// console.log(newArr);
-
-// const newArr = products.reduce((acc, val) => {
-// acc.push(val.name)
-// return acc
-// }, [])
-// console.log(newArr);
-
-// const onlyOther = products.reduce((acc, val) =>{
-//     if (val.category === "Other" ) { 
-//         acc.push(val)
-//     }
-//     return acc;
-// },[])
-// console.log(onlyOther);
 
 const productsContainer = document.querySelector(".productsContainer");
 
@@ -114,6 +90,8 @@ function renderProduct(product) {
   return productCard;
 }
 
+
+
 function renderProductList(products) {
   productsContainer.innerHTML = "";
   products.forEach((product) => {
@@ -144,3 +122,33 @@ const fromLolacStorage = localStorage.getItem("formData");
 const parse = JSON.parse(fromLolacStorage);
 console.log(parse.lastname);
 
+
+
+let myVar = 'Timon';
+
+localStorage.setItem('myVar', myVar);
+// Get from LS
+const fromLS = localStorage.getItem('myVar');
+console.log(fromLS);
+// Remove from LS
+localStorage.removeItem('myVar');
+
+const formObject = {
+    name: 'Vasilij',
+    lastname: 'Ivanov',
+    phone: '12345678'
+}
+
+localStorage.setItem('formData', JSON.stringify(formObject));
+const fromLocalStorage2 = localStorage.getItem('formData');
+const parsedObject = JSON.parse(fromLocalStorage2);
+console.log(parsedObject.lastname);
+
+// короче
+console.log( JSON.parse(localStorage.getItem('formData')).lastname )
+
+/*
+ - положить в localStorage обект formObject, используем ключ formData
+ - извлечь это из ЛС
+ - вывести в консоль значение свойства lastname извлеченных данных
+*/
