@@ -212,6 +212,7 @@ btn.addEventListener('click', (event) => {
         const filteredProducts = products.filter(product => product.price >= priceFrom && product.price <= priceTo);
         renderProductList(filteredProducts);
     }
+    event.preventDefault();
 });
 
 // 7. Задача "со звездочкой". Реализовать функцию `saveInputsData`, которая будет сохранять значения всех инпутов на странице, у которых есть ID, в localStorage. Используем объект `inputsData`. Ключи объекта - ID инпутов, а значения объекта - то, что введено в эти инпуты. И реализовать обратную функцию, `restoreInputsData`, которая извлечет из ЛС этот объект, и если он существует - то заполнит соответствующие инпуты значениями.
