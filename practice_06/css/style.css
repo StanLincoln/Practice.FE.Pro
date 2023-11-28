@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.mainContainer {
+  padding: 2.5rem 3.125rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 40px;
+}
+
+.close {
+  position: absolute;
+  right: 3.125rem;
+  top: 2.5rem;
+  width: 25px;
+  height: 25px;
+}
+
+.input {
+  border-radius: 0.625rem;
+  border: 0.0625rem solid #A1A1A1;
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(0.625rem);
+  padding: 0.875rem;
+  font-size: 0.875rem;
+
+}
+
+select,
+::placeholder {
+  color: #bebebe;
+}
+
+.productImage {
+  min-width: 16.375rem;
+  height: 16.375rem;
+  border-radius: 0.9375rem;
+  border: 0.125rem dashed #000;
+  background: rgba(255, 255, 255, 0.00);
+  grid-column: 1/2;
+  grid-row: 1/4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}
+
+.arrov {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
+.productImage p {
+  color: #BFBFBF;
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+.addProductFormContainer {
+  gap: 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(16.375em, 1fr) 1fr 1fr;
+}
+
+.child1 {
+  grid-column: 2/4;
+  grid-row: 1/2;
+}
+
+.child2 {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.child3 {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.child6 {
+  grid-column: 2/4;
+  grid-row: 3/6;
+}
+
+.check-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 54px;
+  padding-top: 20px;
+}
+
+.check-container input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  background: #F5F4F4;
+}
+
+.check-container label,
+.check-container input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  padding-top: 20px;
+  grid-column: 2/4;
+}
+
+.button {
+  border: none;
+  border-radius: 10px;
+  width: 262px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.button.fill {
+  background: #FF9C00;
+  color: #FFF;
+  font-weight: 700;
+}
+
+.button.outline {
+  border: 1px solid #FF9C00;
+  background-color: #FEFEFE;
+  color: #040404;
+}
+
+@media only screen and (max-width: 700px) {
+  .addProductFormContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .check-container {
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  .close {
+    width: 15px;
+    height: 15px;
+  }
+  .btn-container{
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .btn-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+}

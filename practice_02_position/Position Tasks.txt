@@ -1,0 +1,242 @@
+1. На странице есть 3 цветных блока, они позиционированы "по умолчанию" (`position: static`). Нужно сместить второй блок так, чтобы он НЕ изымался из нормального потока, и при этом был смещен на 50 пикселей влево, и на 50 пикселей вниз относительно своей нормальной позиции.
+
+<body>
+    <main class="mainContainer">
+        <div class="blocksContainer">
+            <div class="block block1">
+                <p>First block</p>
+            </div>
+            <div class="block block2">
+                <p>Second block</p>
+            </div>
+            <div class="block block3">
+                <p>Third block</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+
+.block2 {
+    background-color: lightgreen;
+    position: relative;
+    top: 50px;
+    left: -50px;
+}
+
+2. Изменить стили 2-го блока так, чтобы он позиционировался абсолютно, и также смещался относительно body на 50 пикселей вниз, и на 50 пикселей влево.
+
+.block2 {
+    background-color: lightgreen;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
+3. Сделать так, чтобы 3-й блок был "поверх" второго блока (то есть перекрывал его).
+
+.block2 {
+    background-color: lightgreen;
+    position: relative;
+    top: 50px;
+    left: 50px;
+    z-index: 0;
+}
+
+.block3 {
+    background-color: lightsalmon;
+    position: relative;
+    z-index: 1;
+}
+
+
+4. Вернуть "обычное" позиционирование блокам. Теперь работаем с фиксированным позиционированием. Нужно задать высоту блока `.blocksContainer` 1200 пикселей. И нужно сделать так, чтобы блок 1 был всегда вверху экрана, вне зависимости от скролла (то есть зафиксировать его). Также, нужно сделать так, чтобы он занимал всю доступную ширину.
+
+.blocksContainer {
+    height: 1200px;
+    position: relative;
+}
+
+.block1 {
+    background-color: aqua;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+5. Сделать так, чтобы блоки 2 и 3 были видны при скролле "вверху" страницы (то есть, если страница еще не прокручена вниз). В этом нам может помочь позиционирование блока 2.
+
+.blocksContainer {
+    height: 1200px;
+    position: relative;
+}
+
+.block {
+    text-align: center;
+    height: 200px;
+
+}
+
+.block1 {
+    background-color: aqua;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.block2 {
+    background-color: lightgreen;
+    margin-top: 200px;
+}
+
+6. Разместить в блоке 3 два дополнительных блока. Обоим блокам добавить класс `redBox`. Нужно сделать так, чтобы первый блок был смещен на 20 пикселей влево и на 20 пикселей вниз относительно левого верхнего угла родительского блока (блок 3), а второй - смещен на 20 пикселей право и на 20 пикселей вверх относительно правого нижнего угла родительского блока. Для этого, понадобится сделать классы для этих блоков (назовем их `leftBlock`, `rightBlock`).
+
+<body>
+    <main class="mainContainer">
+        <div class="blocksContainer">
+            <div class="block block1">
+                <p>First block</p>
+            </div>
+            <div class="block block2">
+                <p>Second block</p>
+            </div>
+            <div class="block block3">
+                <p>Third block</p>
+                <div class="redbox leftBlock"></div>
+                <div class="redbox rightBlock"></div>
+            </div>
+        </div>
+    </main>
+</body>
+
+
+
+.block3 {
+    background-color: lightsalmon;
+    position: relative;
+}
+
+.redbox {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+}
+.leftBlock {
+    left: 20px;
+    top: 20px;
+}
+.rightBlock{
+    right: 20px;
+    bottom: 20px;
+}
+
+7. Усложняем задачу, делаем "всплывающую подсказку". Нужно сделать так, чтобы при наведении на блок 1, на нем появлялся текст "Всплывающая подсказка". Текст сделать тоже в блоке, на зеленом фоне. Этот зеленый блок с текстом должен появиться в левом верхнем углу блока 1. Для управления видимостью, работаем со свойством `display` блока с подсказкой. По умолчанию он скрыт, и появляться должен только при наведении на блок 1.
+
+.block1 {
+    background-color: aqua;
+    position: relative;
+}
+
+.block1::before {
+    content: "Всплывающая подсказка";
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: green;
+    color: white;
+    padding: 5px;
+    z-index: 3;
+}
+
+.block1:hover::before {
+    display: block;
+}
+
+8. Добавляем плавные переходы. Нужно чтобы блок с подсказкой "выплывал" сверху при наведении на блок 1. Здесь нам нужно оперировать уже не свойством `display`, а управлять смещением блока. А для плавного перехода нужно добавить задержку (`transition`) в 0.5s.
+
+<div class="block block1">
+                <p>First block</p>
+                <div class="tip">Всплывающая подсказка</div>
+            </div>
+
+
+.block1 {
+    background-color: aqua;
+    position: relative;
+}
+
+.tip {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background-color: #008000;
+    padding: 30px;
+    color: #ffffff;
+    transition: top 0.5s ease;
+}
+
+.block1:hover .tip {
+    top: 0;
+}
+
+9. Изменяем направление "выплывания" блока с подсказкой. Теперь нужно, чтобы он выплывал слева (из-за левой границы блока 1).
+
+.block1 {
+    background-color: aqua;
+    position: relative;
+}
+
+.tip {
+    position: absolute;
+    left: -100%;
+    top: 0;
+    background-color: #008000;
+    padding: 30px;
+    color: #ffffff;
+    transition: left 0.5s ease;
+}
+
+.block1:hover .tip {
+    left: 0;
+}
+
+10. Теперь мы хотим переместить этот "всплывающий" блок в блок 2. И нужно сделать так, чтобы при наведении на блок 2, этот "всплывающий" блок появлялся НАД нижней границей блока 2 (т.е. поднимался вверх, и отображался поверх блока 2). При этом, всплывающий блок не должен быть поверх блока 3. Здесь нам может помочь `z-index` у блока 3 и у вспылвающего блока.
+
+<div class="block block2">
+                <p>Second block</p>
+                <div class="tip">Всплывающая подсказка</div>
+            </div>
+
+
+.block2 {
+    background-color: lightgreen;
+    position: relative;
+}
+
+.tip {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    background-color: #ff0000;
+    padding: 30px;
+    color: #ffffff;
+    transition: bottom 0.5s ease;
+    z-index: 0;
+}
+
+.block2:hover .tip {
+    bottom: 0;
+}
+
+.block3 {
+    background-color: lightsalmon;
+    position: relative;
+    z-index: 1;
+}
+
+
+11. Верстаем форму обратной связи. Она должна быть поверх остального контента, по центру экрана. Макет доступен по [https://www.figma.com/file/EDIlYSxLaf24q9hra6PLmR/ContactsForm?type=design&node-id=0%3A1&mode=design&t=i9R1vaPnGUOOMBsk-1](ссылке).

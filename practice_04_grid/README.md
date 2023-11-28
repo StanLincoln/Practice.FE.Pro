@@ -15,11 +15,75 @@
 2. Усложняем задачу - работаем с выравниванием элементов по основной оси. Нужно:
  - задать минимальную ширину у каждого блока - поставить значение 200 пикселей.
  - сделать так, чтобы в нашей сетке элементы выравнивались по центру.
+
+ .gridContainer {
+    border: 1px solid blue;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.box {
+    width: 200px;
+    min-height: 200px;
+    border: 1px solid black;
+}
+
 3. Теперь, работаем с выравниванием по обеим осям. Задаем высоту контейнера - 900 пикселей. Задаем минимальную высоту блоков - 200 пикселей. Нужно разместить наши блоки по центру ячеек сетки (чтобы выравнивание было и по горизонтали, и по вертикали).
+
+.gridContainer {
+    border: 1px solid blue;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    height: 900px;
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
 4. Индивидуальное выравнивание блоков. Сделать так, чтобы 2-й блок был размещен в верхнем правом углу своей ячейки сетки, а 3-й блок был размещен в левом нижнем углу своей ячейки.
+
+.box2 {
+    background-color: yellow;
+    justify-self: end;
+    align-self: start;
+}
+
+.box3 {
+    background-color: lightgreen;
+    justify-self: start;
+    align-self: end;
+}
+
 5. Работаем с шаблонами размещения элементов сетки. Нужно сделать так, чтобы 2-й элемент занимал 2-ю и 3-ю ячейки сетки.
+
+.box2 {
+    background-color: yellow;
+    grid-column: 2/4;
+}
+
 6. Продолжаем работать с шаблонами размещения. Теперь 2-й элемент должен занимать 2 строки (первую и вторую).
+
+.box2 {
+    background-color: yellow;
+    grid-row: 1/3;
+    grid-column: 2/4;
+}
+
 7. Неявные гриды. Нужно сделать так, чтобы те блоки, которые не поместились в сетку 3х3, и размещены ниже, имели бы высоту 150 пикселей. Подсказка: для этого нужно указать грид-контейнеру настройку строк "по умолчанию" (auto).
+
+.gridContainer {
+    border: 1px solid blue;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-rows: 150px;
+}
 
 
 ### Полезные ссылки

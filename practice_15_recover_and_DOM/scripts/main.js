@@ -199,7 +199,11 @@ mainContainer.append(btn);
 btn.addEventListener('click', (event) => {
     const priceFrom = priceInput1.value;
     const priceTo = priceInput2.value;
+<<<<<<< HEAD
     if (!priceFrom &&!priceTo) {
+=======
+    if (!priceFrom && !priceTo) {
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
         const filteredProducts = products.filter(product => product.price >= 0);
         renderProductList(filteredProducts);
     } else if (!priceFrom) {
@@ -212,6 +216,13 @@ btn.addEventListener('click', (event) => {
         const filteredProducts = products.filter(product => product.price >= priceFrom && product.price <= priceTo);
         renderProductList(filteredProducts);
     }
+<<<<<<< HEAD
 });
 
 // 7. Задача "со звездочкой". Реализовать функцию `saveInputsData`, которая будет сохранять значения всех инпутов на странице, у которых есть ID, в localStorage. Используем объект `inputsData`. Ключи объекта - ID инпутов, а значения объекта - то, что введено в эти инпуты. И реализовать обратную функцию, `restoreInputsData`, которая извлечет из ЛС этот объект, и если он существует - то заполнит соответствующие инпуты значениями.
+=======
+    event.preventDefault();
+});
+
+// 7. Задача "со звездочкой". Реализовать функцию `saveInputsData`, которая будет сохранять значения всех инпутов на странице, у которых есть ID, в localStorage. Используем объект `inputsData`. Ключи объекта - ID инпутов, а значения объекта - то, что введено в эти инпуты. И реализовать обратную функцию, `restoreInputsData`, которая извлечет из ЛС этот объект, и если он существует - то заполнит соответствующие инпуты значениями.
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082

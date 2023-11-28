@@ -1,6 +1,11 @@
 // 1. Работаем с отложенным выполнением кода. Нужно вывести в консоль сообщение "Delayed message", через 5 секунд после запуска скрипта.
 
+<<<<<<< HEAD
 setTimeout(() => {console.log('Delayed message')
+=======
+setTimeout(() => {
+  console.log("Delayed message");
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
 }, 5000);
 
 // 2. Делаем блок на странице, который будет запускать отложенное выполнение. Нужно сделать инпут, в который будем вводить задержку в секундах, и кнопку "Запуск". При нажатии на кнопку "Запуск", нужно через N секунд вывести сообщение "Delayed message". N - это кол-во секунд, введенное в инпуте.
@@ -9,6 +14,7 @@ setTimeout(() => {console.log('Delayed message')
 //  - при нажатии на кнопку "Отмена", нам нужно отменить запланированное в `setTimeout` выполнение.
 //  - если выполнение все же произошло (т.е. функциональность внутри `setTimeout` выполнилась), то кнопку "Отмена" скрываем.
 
+<<<<<<< HEAD
 const main = document.querySelector('.mainContainer');
 const input = document.createElement('input');
 main.append(input);
@@ -19,10 +25,23 @@ main.append(btn);
 
 const btnCancel = document.createElement('button');
 btnCancel.textContent = 'Отмена';
+=======
+const main = document.querySelector(".mainContainer");
+const input = document.createElement("input");
+main.append(input);
+
+const btn = document.createElement("button");
+btn.textContent = "Запуск";
+main.append(btn);
+
+const btnCancel = document.createElement("button");
+btnCancel.textContent = "Отмена";
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
 btnCancel.disabled = true;
 main.append(btnCancel);
 
 let timerId;
+<<<<<<< HEAD
 btn.addEventListener('click', () => {
     if(!Number.isNaN(+input.value)){
         btnCancel.disabled = false;
@@ -37,16 +56,39 @@ btn.addEventListener('click', () => {
 btnCancel.addEventListener('click', () => {
     clearTimeout(timerId);
     btnCancel.disabled = true;
+=======
+btn.addEventListener("click", () => {
+  if (!Number.isNaN(+input.value)) {
+    btnCancel.disabled = false;
+    timerId = setTimeout(() => {
+      console.log("Delayed message");
+      btnCancel.disabled = true;
+    }, input.value * 1000);
+  } else {
+    console.log("Not a number");
+  }
+});
+
+btnCancel.addEventListener("click", () => {
+  clearTimeout(timerId);
+  btnCancel.disabled = true;
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
 });
 
 // 4. Работаем с другой асинхронной операцией. Наша задача - каждые 5 секунд выводить в консоль сообщение "Прошло 5 секунд".
 
+<<<<<<< HEAD
 setInterval(() => {console.log('Прошло 5 секунд')
+=======
+setInterval(() => {
+  console.log("Прошло 5 секунд");
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
 }, 5000);
 
 // 5. Добавляем на страницу текущие дату и время. Нужно добавить в разметку блок, в котором должны отображаться текущие дата и время, вида `01.01.2000 11:23:55`. И нужно сделать так, чтобы дата и время отображались актуальные (т.е. обновлять текст ежесекундно).
 
 const date = new Date();
+<<<<<<< HEAD
 const now = date.toLocaleDateString() +' ' + date.toLocaleTimeString();
 
 const newDate = document.createElement('p');
@@ -58,12 +100,26 @@ function updateTimerDisplay() {
 }
 setInterval(() => {newDate}, 1000); 
 //Не работает. Время обновляется, когда обновляется страница
+=======
+const now = date.toLocaleDateString() + " " + date.toLocaleTimeString();
+
+const newDate = document.createElement("p");
+newDate.textContent = now;
+main.append(newDate);
+
+setInterval(() => {
+  const date = new Date();
+  const now = date.toLocaleDateString() + " " + date.toLocaleTimeString();
+  newDate.textContent = now;
+}, 1000);
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
 
 // 6. Реализуем простой секундомер. Нужно добавить в блок с id=`simpleTimerContainer` секундомер. В блоке будут:
 //  - параграф, в котором будем выводить текущее время секундомера
 //  - кнопка "Старт" - при нажатии запускаем секундомер
 //  - кнопка "Сброс" - при нажатии сбрасываем секундомер.
 
+<<<<<<< HEAD
 const timer = document.createElement('div');
 timer.setAttribute('id', 'simpleTimerContainer')
 main.append(timer)
@@ -75,10 +131,24 @@ btnStart.textContent = 'Start';
 const btnBreak = document.createElement('button');
 btnBreak.textContent = 'Reset';
 timer.append(timerText, btnStart, btnBreak)
+=======
+const timer = document.createElement("div");
+timer.setAttribute("id", "simpleTimerContainer");
+main.append(timer);
+
+const timerText = document.createElement("p");
+timerText.textContent = "0 seconds";
+const btnStart = document.createElement("button");
+btnStart.textContent = "Start";
+const btnBreak = document.createElement("button");
+btnBreak.textContent = "Reset";
+timer.append(timerText, btnStart, btnBreak);
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
 
 let timerInterval;
 let seconds = 0;
 
+<<<<<<< HEAD
 btnStart.addEventListener('click', () => {
     timerInterval = setInterval(function () {
         seconds++;
@@ -94,10 +164,28 @@ btnBreak.addEventListener('click', () => {
 
 function updateTimerDisplay() {
     timerText.textContent = seconds +' seconds';
+=======
+btnStart.addEventListener("click", () => {
+  timerInterval = setInterval(function () {
+    seconds++;
+    updateTimerDisplay();
+  }, 1000);
+});
+
+btnBreak.addEventListener("click", () => {
+  clearInterval(timerInterval);
+  seconds = 0;
+  updateTimerDisplay();
+});
+
+function updateTimerDisplay() {
+  timerText.textContent = seconds + " seconds";
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
 }
 
 // 7. Усложняем наш секундомер. Нам нужно добавить кнопки "Пауза", "Возобновить". Первая будет приостанавливать, но не сбрасывать секундомер, а вторая - возобновлять его работу.
 
+<<<<<<< HEAD
 const btnPause = document.createElement('button');
 btnPause.textContent = 'Pause';
 const btnPlay = document.createElement('button');
@@ -113,11 +201,29 @@ btnPlay.addEventListener('click', () => {
         seconds++;
         updateTimerDisplay();
     }, 1000);
+=======
+const btnPause = document.createElement("button");
+btnPause.textContent = "Pause";
+const btnPlay = document.createElement("button");
+btnPlay.textContent = "Play";
+timer.append(btnPause, btnPlay);
+
+btnPause.addEventListener("click", () => {
+  clearInterval(timerInterval);
+});
+
+btnPlay.addEventListener("click", () => {
+  timerInterval = setInterval(function () {
+    seconds++;
+    updateTimerDisplay();
+  }, 1000);
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
 });
 
 // 8. Работаем с промисами. Задача - написать промис, который через 5 секунд будет успешно завершен текстом "Successfully finished!". Этот текст нужно вывести в консоль.
 
 const newPromise = new Promise((resolve, reject) => {
+<<<<<<< HEAD
  setTimeout(() => {
     resolve("Successfully finished!")
 }, 5000)
@@ -135,3 +241,25 @@ const newPromise1 = new Promise( ( resolve, reject) => {
     (result) => { console.log(result) }
  )
  .catch( error => { console.log(error) } );
+=======
+  setTimeout(() => {
+    resolve("Successfully finished!");
+  }, 5000);
+});
+newPromise.then((result) => console.log(result));
+
+// 9. Теперь задача через 5 секунд завершить промис "неуспехом", с текстом "Something went wrong!", и вывести результат в консоль.
+const newPromise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject("Something went wrong!");
+  }, 5000);
+});
+
+newPromise1
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
