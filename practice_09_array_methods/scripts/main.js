@@ -1,8 +1,26 @@
+<<<<<<< HEAD
+// Подопытные данные
+=======
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
 
 // Массив чисел (примитивы)
 const numbers = [1,3,6,2,4,0,9,7,5,10,15,12,11,9,2,7];
 
+<<<<<<< HEAD
+/* - добавить элемент в конец массива чисел (число 45); */
+// const res = numbers.push(45);
+// console.log(res);
+
+/*  - добавить несколько элементов в конец массива чисел (числа 45, 68, 23);
+*/
+numbers.push(45,68,23);
+
+// Массив строк (примитивы)
+const strings = ['this', 'is', 'an', 'array', 'of', 'simple', 'strings'];
+
+=======
 // Массив объектов
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
 const ball = {
     name: "Ball",
     category: "Sport",
@@ -42,6 +60,11 @@ const shark = {
     price: 45
 };
 
+<<<<<<< HEAD
+// Массив объектов
+let products = [ball, gloves, shoes, hammer, saw];
+
+=======
 let products = [ball, gloves, shoes, hammer, saw];
 
 // 1. Добавление/удаление элементов в/из массива
@@ -57,6 +80,7 @@ let products = [ball, gloves, shoes, hammer, saw];
 
 // 1.3 - добавить объект в конец массива объектов (создать новый объект товара, по образу существующих).
 
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
 // const newProduct = {
 //     name: 'Name',
 //     category: 'Sport',
@@ -64,6 +88,86 @@ let products = [ball, gloves, shoes, hammer, saw];
 //     price: 50
 // }
 
+<<<<<<< HEAD
+// console.log(products.push(newProduct));
+// console.log(products);
+
+/* удалить последний элемент из массива чисел. */
+// const resPop = numbers.pop();
+
+/*
+  - добавить элемент в начало массива чисел (число 9)
+  - удалить первый элемент из массива чисел
+*/
+// numbers.unshift(9);
+// console.log('shifted numbers', numbers);
+// numbers.shift();
+
+/*   - получить "срез" массива чисел - это должен быть новый массив, который содержит элементы массива `numbers` со 2 по 5.
+*/
+// если берем по индексу
+// const slicedArray = numbers.slice(2,6);
+// если берем по порядковому номеру
+// const nSlicedArray = numbers.slice(1,5);
+
+/* - пройтись по массиву чисел, для каждого числа вывести, является ли оно четным. */
+// numbers.forEach( (el) => {
+//     if (el % 2 === 0) {
+//         console.log(`${el} is even`)
+//     }
+//     else {
+//         console.log(`${el} is odd`)
+//     }
+// });
+
+/*   - пройтись по массиву строк, для каждой строки, если она меньше 4 символов, выводить `short`, иначе - `long`
+*/
+// strings.forEach( (str) => {
+//     if (str.length < 4) {
+//         console.log(`${str} is short`)
+//     }
+//     else {
+//         console.log(`${str} is long`)
+//     }
+// });
+
+/*   - пройтись по массиву товаров, вывести в консоль названия всех товаров */
+// products.forEach( (elem) => {
+//     console.log(elem.name);
+// });
+
+/*   - из массива чисел, получить новый массив, который будет содержать квадраты чисел */
+const squares = numbers.map( (elem) => {
+    return elem * elem;
+});
+console.log(squares)
+
+/*
+  - из массива строк получить новый массив, который будет содержать массив ОБЪЕКТОВ, у которых будут свойства:
+     * value - сама строка
+     * size - если длина строки меньше 4 символов, то `short`, иначе - `long`
+     *
+*/
+
+const newArray = strings.map( (str) => {
+
+    let nSize;
+    if (str.length < 4) {
+        nSize = 'short';
+    }
+    else {
+        nSize = 'long'
+    }
+
+    let res = {
+        value: str,
+        size: nSize
+    }
+    return res;
+})
+
+console.log(newArray);
+=======
 // products.push(newProduct)
 // console.log(products);
 
@@ -288,3 +392,4 @@ let products = [ball, gloves, shoes, hammer, saw];
 // console.log(filteredNumbers);  // Вывод: [4, 5, 6]
 
 
+>>>>>>> c6113ff14c1eb83415089db1baa751f16b8cd082
