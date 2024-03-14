@@ -1,0 +1,152 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-family: "Karla", sans-serif;
+  font-style: normal;
+  font-size: 23px;
+}
+
+body {
+  background-color: #a7d7c5;
+}
+body a {
+  color: #32403b;
+}
+
+.wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+form {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 40px 61px 20px 61px;
+  max-width: 698px;
+  background-color: #f6fbf9;
+  border-radius: 49px;
+}
+form h1 {
+  text-align: center;
+  font-size: 55.226px;
+  font-weight: 700;
+  line-height: 71.794px;
+  margin-bottom: 20px;
+  color: #212b27;
+}
+form h2 {
+  text-align: center;
+  margin: 0 auto;
+  line-height: 29.914px;
+  max-width: 472.492px;
+  margin-bottom: 10px;
+}
+form input {
+  border-radius: 15px;
+  border: 1.534px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  padding: 20px 32px;
+}
+form input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+form input::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+form input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+form input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+form input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+form .input-container input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+form .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+form .user input {
+  width: 50%;
+  margin-bottom: 20px;
+}
+form .user #name {
+  margin-right: 16px;
+}
+form p {
+  margin-bottom: 20px;
+}
+form .user-number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+form .user-number input {
+  width: 25%;
+}
+form .user-number #code {
+  margin-right: 19px;
+}
+form .user-number input:last-child {
+  width: 75%;
+}
+form .radio-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+}
+form .radio-btn .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+form .radio-btn .container input[type=radio] {
+  width: 40px;
+  height: 40px;
+  margin-right: 30px;
+}
+form div {
+  text-align: center;
+}
+form div button {
+  margin-bottom: 20px;
+  border-radius: 23.011px;
+  border: none;
+  background: #84c7ae;
+  color: #fff;
+  text-align: center;
+  font-size: 33.749px;
+  font-weight: 700;
+  line-height: 43.874px;
+  padding: 25px 74px;
+  cursor: pointer;
+}
+form .signIn {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+
+

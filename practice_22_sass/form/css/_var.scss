@@ -1,0 +1,20 @@
+$main-bg: #a7d7c5;
+$form-bg: #f6fbf9;
+$input-bg: #fff;
+$btn-bg: #84c7ae;
+$primary-font: "Karla", sans-serif;
+$h1-color: #212b27;
+$main-color: #32403b;
+
+@mixin greenButton {
+  border-radius: 23.011px;
+  border: none;
+  background: $btn-bg;
+  color: $input-bg;
+  text-align: center;
+  font-size: 33.749px;
+  font-weight: 700;
+  line-height: 43.874px;
+  padding: 25px 74px;
+  cursor: pointer;
+}

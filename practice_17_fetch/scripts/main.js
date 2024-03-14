@@ -58,20 +58,3 @@
   // fetch(`https://jsonplaceholder.typicode.com/posts`)
   //   .then((res) => res.json())
   //   .then((result) => console.log(result));
-
-
-  // 1. Вспоминаем промисы. Пишем функцию `promiseFactory`, которая вернет нам промис. Этот промис должен быть зарезолвлен текстом "Success" через 5 секунд.
-
-  // function promiseFactory(){
-  //   return new Promise(resolve => setTimeout(() => console.log('Success'), 5000))
-  // }
-  // promiseFactory();
-
-  // 2. Дорабатываем функцию. Нужно, чтобы она принимала в аргументах время задержки `timeout` (в секундах), и флаг `success`. В зависимости от флага, нужно резолвить/отвергать промис через `timeout` секунд.
-
-  function promiseFactory(timeout, success) {
-    return new Promise((resolve, reject) {
-
-    })
-
-  }
